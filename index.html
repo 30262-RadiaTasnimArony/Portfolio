@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radia Tasnim Arony · Portfolio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ----- Reset & Global ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8fafc;
+            color: #0b1b2b;
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 2rem 1.5rem;
+        }
+
+        /* ----- Card container ----- */
+        .portfolio-card {
+            max-width: 1100px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 2.5rem;
+            box-shadow: 0 20px 40px -12px rgba(0, 20, 30, 0.15),
+                        0 8px 24px -8px rgba(0, 0, 0, 0.05);
+            padding: 3rem 2.8rem;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* ----- Intro header ----- */
+        .intro {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .intro-text h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #0a2942;
+            line-height: 1.2;
+            margin-bottom: 0.4rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #e6f0ff;
+            color: #0a4b7a;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 0.3rem 1rem;
+            border-radius: 2rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.3px;
+            border: 1px solid #b8d6f5;
+        }
+
+        .current-role {
+            font-size: 1.35rem;
+            font-weight: 500;
+            color: #2c3e50;
+            margin-bottom: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .current-role i {
+            color: #2563eb;
+            width: 1.6rem;
+        }
+
+        .salesforce-highlight {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            background: #f0f7ff;
+            padding: 0.7rem 1.3rem;
+            border-radius: 3rem;
+            margin-top: 0.5rem;
+            border-left: 4px solid #2563eb;
+            flex-wrap: wrap;
+        }
+
+        .salesforce-highlight i {
+            font-size: 1.6rem;
+            color: #2563eb;
+        }
+
+        .salesforce-highlight span {
+            font-weight: 600;
+            color: #0a2942;
+        }
+
+        /* Avatar */
+        .avatar {
+            flex-shrink: 0;
+            width: 130px;
+            height: 130px;
+            background: linear-gradient(145deg, #0a2942, #1e4a6f);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 12px 18px -6px rgba(0, 30, 60, 0.2);
+            border: 4px solid #ffffff;
+            outline: 2px solid #dbeafe;
+        }
+
+        .avatar-initials {
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* ----- Dividers and section titles ----- */
+        .divider {
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #d0e2f2, #b0cde0, #d0e2f2, transparent);
+            margin: 2.2rem 0 2rem;
+            border: 0;
+        }
+
+        .section-title {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #0a2942;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-title i {
+            color: #2563eb;
+            font-size: 1.7rem;
+        }
+
+        /* ----- Education highlight card ----- */
+        .education-card {
+            background: linear-gradient(105deg, #f6fbff 0%, #ffffff 100%);
+            border-radius: 2rem;
+            padding: 1.8rem 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1.8rem;
+            border: 1px solid #d6e8f5;
+            box-shadow: 0 6px 14px rgba(0, 50, 80, 0.04);
+            margin-bottom: 0.8rem;
+        }
+
+        .edu-icon {
+            background: #0a2942;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            flex-shrink: 0;
+            box-shadow: 0 8px 12px -4px rgba(0, 40, 70, 0.2);
+        }
+
+        .edu-details {
+            flex: 1;
+        }
+
+        .edu-details h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #0a2942;
+            line-height: 1.2;
+            margin-bottom: 0.3rem;
+        }
+
+        .edu-details .university {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2563eb;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .edu-details .university i {
+            font-size: 1.1rem;
+            color: #4b7a9c;
+        }
+
+        .edu-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem 1.5rem;
+            color: #3d5e7a;
+            font-size: 0.98rem;
+            margin-top: 0.5rem;
+        }
+
+        .edu-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .edu-meta i {
+            color: #2563eb;
+            width: 1rem;
+        }
+
+        /* ----- Skills grid (general) ----- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-item {
+            background: #f9fcff;
+            border-radius: 1.5rem;
+            padding: 1.2rem 1.4rem;
+            border: 1px solid #ddeeff;
+            transition: all 0.15s ease;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            box-shadow: 0 2px 6px rgba(0, 50, 80, 0.02);
+        }
+
+        .skill-item:hover {
+            background: #ffffff;
+            border-color: #b0d4f0;
+            box-shadow: 0 8px 16px -8px rgba(0, 80, 120, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .skill-item i {
+            font-size: 2rem;
+            width: 2.2rem;
+            text-align: center;
+            color: #2563eb;
+        }
+
+        .skill-text {
+            font-weight: 600;
+            color: #0b2b44;
+            font-size: 1rem;
+            line-height: 1.3;
+        }
+
+        .skill-text small {
+            display: block;
+            font-weight: 400;
+            color: #4a6b85;
+            font-size: 0.85rem;
+            margin-top: 0.2rem;
+        }
+
+        /* ----- Highlighted Salesforce detail block ----- */
+        .highlight-block {
+            background: #f3f9ff;
+            border-radius: 1.5rem;
+            padding: 1.4rem 1.8rem;
+            margin-bottom: 0.5rem;
+            border: 1px solid #d4e6f5;
+        }
+
+        .highlight-block p {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.8rem 1.8rem;
+            font-size: 1rem;
+        }
+
+        .highlight-block i {
+            color: #2563eb;
+            margin-right: 0.4rem;
+        }
+
+        /* ----- Footer ----- */
+        .footer-note {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e2edf7;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            color: #4e6b85;
+            font-size: 0.95rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            color: #2c577a;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.2s;
+        }
+
+        .social-links a:hover {
+            color: #2563eb;
+        }
+
+        /* ----- Responsive ----- */
+        @media (max-width: 700px) {
+            .portfolio-card {
+                padding: 2rem 1.5rem;
+                border-radius: 2rem;
+            }
+
+            .intro-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .intro {
+                flex-direction: column-reverse;
+                align-items: flex-start;
+            }
+
+            .avatar {
+                width: 100px;
+                height: 100px;
+            }
+
+            .avatar-initials {
+                font-size: 2.4rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .education-card {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1.5rem;
+            }
+
+            .edu-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.8rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-note {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .intro-text h1 {
+                font-size: 1.9rem;
+            }
+
+            .current-role {
+                font-size: 1.2rem;
+            }
+
+            .salesforce-highlight {
+                flex-wrap: wrap;
+            }
+
+            .edu-details h3 {
+                font-size: 1.3rem;
+            }
+        }
+
+        .text-accent {
+            color: #2563eb;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="portfolio-card">
+        <!-- Header -->
+        <div class="intro">
+            <div class="intro-text">
+                <div class="badge">
+                    <i class="fas fa-briefcase" style="margin-right: 0.4rem;"></i> ERP Trainee
+                </div>
+                <h1>Radia Tasnim Arony</h1>
+                <div class="current-role">
+                    <i class="fas fa-building"></i> ERP Solution Trainee
+                </div>
+                <div class="salesforce-highlight">
+                    <i class="fas fa-cloud"></i>
+                    <span>Salesforce Software Developer · in-depth knowledge</span>
+                </div>
+            </div>
+
+            <div class="avatar">
+                <div class="avatar-initials">RTA</div>
+            </div>
+        </div>
+
+        <!-- ===== EDUCATION SECTION ===== -->
+        <hr class="divider" style="margin-top: 1rem;">
+
+        <div class="section-title">
+            <i class="fas fa-graduation-cap"></i> Education
+        </div>
+
+        <div class="education-card">
+            <div class="edu-icon">
+                <i class="fas fa-university"></i>
+            </div>
+            <div class="edu-details">
+                <h3>BSc in Computer Science &amp; Engineering</h3>
+                <div class="university">
+                    <i class="fas fa-map-pin"></i> BRAC University
+                </div>
+                <div class="edu-meta">
+                    <span><i class="fas fa-calendar-alt"></i> Completed</span>
+                    <span><i class="fas fa-trophy"></i> CSE Graduate</span>
+                    <span><i class="fas fa-laptop-code"></i> Software &amp; systems foundation</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== SKILLS SECTION (CSE grad core + Salesforce/ERP) ===== -->
+        <hr class="divider" style="margin-top: 2.2rem;">
+
+        <div class="section-title">
+            <i class="fas fa-code"></i> Technical skills
+        </div>
+
+        <!-- CSE graduate core skills -->
+        <div class="skills-grid" style="margin-bottom: 1.5rem;">
+            <!-- Programming Languages -->
+            <div class="skill-item">
+                <i class="fab fa-java"></i>
+                <div class="skill-text">
+                    Python
+                    <small>OOP · data structures · algorithms</small>
+                </div>
+            </div>
+            <div class="skill-item">
+                <i class="fas fa-code"></i>
+                <div class="skill-text">
+                    C / C++
+                    <small>Procedural &amp; memory concepts</small>
+                </div>
+            </div>
+            <!-- Web & Databases -->
+            <div class="skill-item">
+                <i class="fab fa-js"></i>
+                <div class="skill-text">
+                    Web fundamentals
+                    <small>HTML · CSS · JavaScript</small>
+                </div>
+            </div>
+            <div class="skill-item">
+                <i class="fas fa-database"></i>
+                <div class="skill-text">
+                    SQL &amp; Databases
+                    <small>MySQL · schema design · queries</small>
+                </div>
+            </div>
+            <!-- CS Core -->
+            <div class="skill-item">
+                <i class="fas fa-sitemap"></i>
+                <div class="skill-text">
+                    Data Structures &amp; Algorithms
+                    <small>problem solving · optimization</small>
+                </div>
+            </div>
+            <div class="skill-item">
+                <i class="fas fa-network-wired"></i>
+                <div class="skill-text">
+                    Operating Systems &amp; Networking
+                    <small>processes · TCP/IP · basics</small>
+                </div>
+            </div>
+            <!-- Software Engineering -->
+            <div class="skill-item">
+                <i class="fas fa-cubes"></i>
+                <div class="skill-text">
+                    OOP &amp; Design Patterns
+                    <small>SOLID · MVC · clean code</small>
+                </div>
+            </div>
+            <div class="skill-item">
+                <i class="fab fa-git-alt"></i>
+                <div class="skill-text">
+                    Git &amp; Version Control
+                    <small>branching · collaboration</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Salesforce & ERP detailed (as before, but labelled clearly) -->
+        <div style="margin-top: 0.8rem; margin-bottom: 0.5rem;">
+            <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1rem;">
+                <i class="fas fa-cloud" style="color: #2563eb; font-size: 1.4rem;"></i>
+                <span style="font-weight: 700; color: #0a2942; font-size: 1.2rem;">Salesforce &amp; ERP specialization</span>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <div class="skill-text">
+                        Salesforce Development
+                        <small>Apex · LWC · Triggers · SOQL</small>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-cog"></i>
+                    <div class="skill-text">
+                        Salesforce Admin
+                        <small>Flows · objects · security</small>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-plug"></i>
+                    <div class="skill-text">
+                        Integration &amp; APIs
+                        <small>REST · SOAP · middleware</small>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-chart-pie"></i>
+                    <div class="skill-text">
+                        ERP Solutions
+                        <small>process · data · implementation</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Short highlight line -->
+        <div class="highlight-block" style="margin-top: 1.8rem;">
+            <p>
+                <span><i class="fas fa-check-circle"></i> <strong>Salesforce</strong> learned in detail as a software developer</span>
+                <span><i class="fas fa-check-circle"></i> <strong>ERP Solution Trainee</strong> — current role</span>
+                <span><i class="fas fa-check-circle"></i> <strong>BSc in CSE</strong> from BRAC University</span>
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer-note">
+            <div>© 2025 Radia Tasnim Arony · built with simplicity</div>
+            <div class="social-links">
+                <a href="#" aria-label="LinkedIn" title="LinkedIn (placeholder)"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="GitHub" title="GitHub (placeholder)"><i class="fab fa-github"></i></a>
+                <a href="#" aria-label="Salesforce Trailhead" title="Trailhead (placeholder)"><i class="fas fa-cloud"></i></a>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
+```
